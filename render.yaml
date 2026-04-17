@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: thebizarreking
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python wsgi.py
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: FLASK_DEBUG
+        value: false

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheBizzareKing - JoJo's Chess</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>♜ TheBizzareKing ♞</h1>
+    
+    <div id="stand-selectors">
+        <div class="selector white-selector">
+            <label>White Stand:</label>
+            <select id="white-stand">
+                <option value="">None</option>
+                <option value="The World">The World</option>
+                <option value="King Crimson">King Crimson</option>
+            </select>
+        </div>
+        <div class="selector black-selector">
+            <label>Black Stand:</label>
+            <select id="black-stand">
+                <option value="">None</option>
+                <option value="The World">The World</option>
+                <option value="King Crimson">King Crimson</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="game-info">
+        <span id="turn-indicator">White's Turn</span>
+        <span id="game-status"></span>
+        <span id="cooldown-display"></span>
+    </div>
+    
+    <div id="kc-status" class="kc-status hidden">
+        <span id="kc-status-text"></span>
+    </div>
+    
+    <div id="board-container">
+        <div id="chessboard" class="grid-board"></div>
+    </div>
+    
+    <div id="controls">
+        <button id="reset-btn">New Game</button>
+        <button id="activate-ability-btn" disabled>Activate Stand Ability</button>
+        <span id="message"></span>
+    </div>
+
+    <div id="ability-overlay" class="ability-overlay hidden"></div>
+    <div id="ability-popup" class="ability-popup hidden"></div>
+    
+    <div id="time-skip-overlay"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
