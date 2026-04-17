@@ -12,7 +12,7 @@ load_dotenv()
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', os.urandom(24).hex())
 # Use environment variable for CORS origins, default to localhost for development
-cors_origins = os.environ.get('CORS_ORIGINS', 'http://localhost:3000')
+cors_origins = os.environ.get('CORS_ORIGINS', '*')
 socketio = SocketIO(app, cors_allowed_origins=cors_origins)
 
 # Store multiple game states keyed by game ID
