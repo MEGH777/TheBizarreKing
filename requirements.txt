@@ -2,5 +2,4 @@ Flask==3.0.0
 flask-socketio==5.3.5
 python-socketio==5.11.0
 python-chess==1.999
-eventlet==0.34.3
 python-dotenv==1.0.0
